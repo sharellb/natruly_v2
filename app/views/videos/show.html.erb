@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div class="well">
+  <h1 class="text-center"><%= @video.title %></h1>
+  <div class="yt_video thumbnail">
+    <div class="embed-container">
+      <iframe src=<%= "//www.youtube.com/embed/#{@video.uid}" %> allowfullscreen></iframe>
+    </div>
+    <div class="caption">
+      <p>Uploaded by: <b><%= link_to @video.author, "/videos/#{@video.id}" %></b></p>
+    </div>
+  </div>
+</div>

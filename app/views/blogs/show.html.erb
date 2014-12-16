@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<div class="latest">
+	<% @doc = Nokogiri::XML(open("#{@blog.feed}")) %>
+	<h1>Latest articles from <%= link_to @blog.title, @doc.xpath("//channel/link").text, :target => "_blank" %></h1>
+
+	<% @items = @doc.xpath("//item") %>
+
+	<% @items.each do |item| %>
+		<% title = item.xpath("./title") %>
+		<% link = item.xpath("./link") %>
+		<%= link_to title.text, "#{link.text}", :target => "_blank" %>
+		</br>
+	<% end %>
+</div>

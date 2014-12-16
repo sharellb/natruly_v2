@@ -1,0 +1,224 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require jquery-ui
+ *= require_tree .
+ *= require_self
+ */
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/****GENERAL****/
+body {
+  background-color: #775ba3;
+  color: white;
+  font-family: 'Cabin', sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+  font-family: 'Lobster Two', cursive;
+}
+
+.well {
+  background-color: #91c5a9;
+  border-width: 0px;
+  margin: 2% 5%;
+}
+
+a:hover {
+  background-color: transparent;
+  text-decoration: none;
+  color: #775ba3;
+}
+
+a:visited {
+  color: white;
+}
+
+.jumbotron {
+  background-color: #f98a5f;
+}
+
+p {
+  font-family: 'Cabin', sans-serif;
+  font-size: 18px;
+}
+
+
+/****NAVBAR****/
+.navbar-default {
+  background-color: #442d65;
+  border-radius: 0px;
+  border-width: 0px;
+
+  .navbar-brand {
+  color: white;
+  font-family: 'Lobster Two', cursive;
+  font-size: 28px;
+  }
+
+  .navbar-brand:hover, .navbar-brand:focus {
+    color: #775ba3;
+  }
+
+
+}
+.navbar-default .navbar-nav {
+  li {
+    a {
+      color: white;
+      font-family: 'Cabin', sans-serif;
+      font-size: 18px;
+      text-transform: lowercase;
+    }
+
+    a:hover {
+      color: #775ba3;
+    }
+  }
+}
+
+/****SALON****/
+#map {
+  margin: 0;
+  width: 40em; 
+  height: 20em;
+}
+
+
+#salon-table {
+  background-color: #f98a5f;
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+  margin-top: 6%;
+
+
+  a {
+    color: #f8e1b4;
+  }
+
+  a:visited {
+    color: #775ba3;
+  }
+
+  a:hover {
+    color: #442d65; 
+  }
+
+  tbody, thead {
+    display: block;
+  }
+
+  tbody {
+    overflow: auto;
+    height: 450px;
+  }
+
+}
+
+.info-window {
+  color: #775ba3;
+  font-family: 'Cabin', sans-serif;
+  a{
+    color: #442d65;
+    font-family: 'Cabin', sans-serif;
+  }
+}
+
+
+
+th {
+  font-weight: normal;
+  color: #f8e1b4;
+}
+
+td {
+  font-family: 'Cabin', sans-serif;
+  font-size: 18px;
+}
+
+
+/****VIDEO****/
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+
+  iframe, object, embed {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.google-container {
+  position: relative;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+
+  iframe, object, embed {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+} 
+
+.thumbnail {
+  a, a:visited, a:focus {
+    color: #442d65;
+  }
+
+  a:hover {
+    color: #775ba3;
+  }
+}
+
+/****BLOG****/
+#blogs {
+  color: white;
+  font-size: 13px;
+
+  a:hover{
+    color: #775ba3;
+  }
+}
+
+.latest {
+  padding: 0 15px;
+  
+  h1 {
+    color: #442d65;
+  }
+  a {
+    color: white;
+  }
+
+  a:hover {
+    color: #91c5a9;
+  }
+}

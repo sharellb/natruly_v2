@@ -1,0 +1,27 @@
+<h1 class="text-center">Videos</h1>
+<% if user_signed_in? %>
+<%= button_to 'Get Videos', videos_path, :method=>:post, :remote => true, :class => "btn btn-primary"  %>
+<% end %>
+<% if @videos.any? %>
+  <div class="container">
+    <% @videos.in_groups_of(3) do |group| %>
+      <div class="row">
+        <% group.each do |video| %>
+          <% if video %>
+            <div class="col-sm-4">
+              <div class="yt_video thumbnail">
+                <h5><%= link_to video.title, "videos/#{video.id}" %></h5>
+                <div class="embed-container">
+                  <%= link_to video.link do %> <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %> <% end %> 
+                </div>
+                <div class="caption">
+                  <p>Uploaded by: <b><%= link_to video.author, "/videos/#{video.id}" %></b></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,6 @@
+<h1 class="text-center">Natural Hair Blogs</h1>
+<div class="well" id="blogs">
+	<% @blogs.each do |blog| %> 
+	<h2 class="text-center"><%= link_to blog.title, "/blogs/#{blog.id}" %></h2>
+	<% end %>
+</div>

@@ -1,0 +1,34 @@
+<h1 class="text-center">Salons</h1>
+<% if user_signed_in? %>
+<%= button_to 'Get Salons', salons_path, :method=>:post, :remote => true, :class => "btn btn-primary"  %>
+<% end %>
+<div class="row">
+  <div class= "well map-well col-sm-5">
+    <div class="google-container">
+      <div id="map"></div>
+    </div>
+  </div>
+  <div class="col-sm-5">
+    <table id="salon-table" class="table">
+      <tbody>
+        <% @salons.each do |salon| %>
+          <tr>
+            <td><%= link_to salon.name, salon.website, :target => "_blank" %></td>
+            <td><%= salon.address %></td>
+            <td><%= salon.phone_number %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+</script>
+

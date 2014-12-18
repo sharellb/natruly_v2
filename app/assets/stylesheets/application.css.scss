@@ -153,14 +153,12 @@ td {
 
 /****VIDEO****/
 .embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
+  position: relative;;
   height: 0;
   overflow: hidden;
   width: 100%;
   height: auto;
-  margin-bottom: 12px;
+  padding-top: 30px;
 
   iframe, object, embed {
     position: absolute;
@@ -196,6 +194,7 @@ td {
   a:hover {
     color: #775ba3;
   }
+
 }
 
 /****BLOG****/

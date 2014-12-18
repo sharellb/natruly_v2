@@ -10,7 +10,7 @@
           <% if video %>
             <div class="col-sm-4">
               <div class="yt_video thumbnail">
-                <h5><%= link_to video.title, "videos/#{video.id}" %></h5>
+                <h4><%= link_to video.title, "videos/#{video.id}" %></h4>
                 <div class="embed-container">
                   <%= link_to video.link do %> <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %> <% end %> 
                 </div>

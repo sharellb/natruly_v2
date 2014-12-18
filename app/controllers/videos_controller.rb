@@ -24,7 +24,11 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
-    @videos = YouTubeIt::OAuth2Client.new(dev_key: ENV['YOUTUBE_DEV_KEY']).videos_by(:user => 'MahoganyCurls').videos
+    channels = Channel.all.map{ |c| c.username }
+    channels.each do |channel|
+      @videos = YouTubeIt::OAuth2Client.new(dev_key: ENV['YOUTUBE_DEV_KEY']).videos_by(:user => channel ).videos
+    end
+
     @videos.each do |video|
       video = Video.new do |v|
         v.link = video.media_content[0].url
